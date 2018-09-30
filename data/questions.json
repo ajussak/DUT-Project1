@@ -1,0 +1,17 @@
+{
+  "title": "Questionnaire",
+  "questions":[
+    {
+      "title": "Les pâtes se magent-elles ?",
+      "answers": ["Oui", "Non"],
+      "correction": [0],
+      "note": "Oui, c'est délicieux."
+    },
+    {
+      "title": "Repondez 2 et 3",
+      "answers": ["1", "2", "3", "4"],
+      "correction": [1, 2],
+      "note": "C'est simple, non ?"
+    }
+  ]
+}
