@@ -8,6 +8,7 @@ class Game {
     start() {
         let content = $('#content');
         content.empty();
+        content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
         content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1></div>');
         content.append('<div class="row"><div class="col s12 l6 offset-l3" id="game-content"></div></div>');
         content.append('<div class="row" id="button-row"><p class="center-align"><a id="ok-button" class="waves-effect waves-light btn center">Valider</a></p></div>');
@@ -24,7 +25,10 @@ class Game {
 
         let gameContent = $('#game-content');
 
+        let button = $('#ok-button');
+
         if (gameContent.children('blockquote').length > 0) {
+            button.text('Valider');
             this.nextQuestion();
         }
         else {
@@ -54,8 +58,7 @@ class Game {
                 this.finalPoint++;
 
             gameContent.append('<h6>Note : </h6><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
-
-
+            button.text('Suivant');
         }
     }
 
