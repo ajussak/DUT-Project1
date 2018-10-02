@@ -6,6 +6,7 @@ class Game {
     }
 
     start() {
+        console.log('SSS');
         let content = $('#content');
         content.empty();
         content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
@@ -66,6 +67,10 @@ class Game {
         return this.currentQuestionData['answers'];
     }
 
+    getCorrection() {
+        return this.currentQuestionData['correction'];
+    }
+
     displayResult() {
         $('#button-row').remove();
 
@@ -98,7 +103,7 @@ class Game {
                 form.append('<p><label><input type="checkbox" class="filled-in"><span>' + ans + '</span></label></p>')
             };
 
-            this.getAnswers().forEach(this.currentQuestionData['correction'].length > 1 ? addCheckbox : addRadio);
+            this.getAnswers().forEach(this.getCorrection().length > 1 ? addCheckbox : addRadio);
 
             let questionContent = $('<div class="row"></div>');
             questionContent.append(form);
@@ -109,12 +114,59 @@ class Game {
 
 class PersonnalityGame extends Game {
 
+    constructor(data) {
+        super(data);
+        this.userEntry = {};
+    }
+
     getAnswers() {
         return ['D\'accord', 'Plutôt', 'Neutre', 'Plutôt pas d\'accord', 'Pas d\'accord'];
     }
 
     buttonClicked() {
 
+        let selectedIndex = -1;
+
+        $('label').each(function (index) {
+            if ($(this)[0].childNodes[0].checked) {
+                selectedIndex = index;
+            }
+        });
+
+        if (selectedIndex !== -1) {
+            let answerNumber = this.getAnswers().length;
+            let category = this.currentQuestionData['category'];
+
+            if (!this.userEntry.hasOwnProperty(category))
+                this.userEntry[category] = [];
+
+            this.userEntry[category].push(1 - (selectedIndex / (answerNumber - 1)));
+
+            this.nextQuestion();
+        }
+    }
+
+    displayResult() {
+        $('#button-row').remove();
+
+        let gameContent = $('#game-content');
+        gameContent.empty();
+
+        let newDiv = $('<div class="row"></div>');
+
+        for (let property in this.userEntry) {
+            const reducer = (accumulator, currentValue) => accumulator + currentValue;
+            let categoryStats = this.userEntry[property];
+
+            newDiv.append('<div class="col l3"><h3 class="center">' + property + '</h3><h4 class="center">' + Math.round(categoryStats.reduce(reducer) / categoryStats.length * 100)  + '%</h4></div>');
+        }
+
+        gameContent.append(newDiv);
+
+    }
+
+    getCorrection() {
+        return [];
     }
 
 }

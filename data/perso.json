@@ -3,9 +3,15 @@
   "questions":[
     {
       "title": "Les pâtes se magent-elles ?",
+      "category": "Swag"
     },
     {
       "title": "Repondez 2 et 3",
+      "category": "Swag"
+    },
+    {
+      "title": "BIte",
+      "category": "Yolo"
     }
   ]
 }
