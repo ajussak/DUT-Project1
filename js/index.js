@@ -7,3 +7,10 @@ $('#start-quizz').click(function (event) {
     })
 });
 
+$('#start-perso').click(function (event) {
+    $.getJSON('data/perso.json', function (data) {
+        currentGame = new PersonnalityGame(data);
+        currentGame.start();
+    })
+});
+

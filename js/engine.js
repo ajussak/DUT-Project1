@@ -106,3 +106,15 @@ class Game {
         }
     }
 }
+
+class PersonnalityGame extends Game {
+
+    getAnswers() {
+        return ['D\'accord', 'Plutôt', 'Neutre', 'Plutôt pas d\'accord', 'Pas d\'accord'];
+    }
+
+    buttonClicked() {
+
+    }
+
+}
