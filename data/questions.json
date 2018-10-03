@@ -2,16 +2,47 @@
   "title": "Questionnaire",
   "questions":[
     {
-      "title": "Les pâtes se magent-elles ?",
-      "answers": ["Oui", "Non"],
+      "title": "Quel est le nom du dut informatique ?",
+      "answers": ["DUT INFO", "DUT IQ", "DUT ITQ"],
       "correction": [0],
-      "note": "Oui, c'est délicieux."
+      "multipleChoices": false
     },
     {
-      "title": "Repondez 2 et 3",
-      "answers": ["1", "2", "3", "4"],
-      "correction": [1, 2],
-      "note": "C'est simple, non ?"
+      "title": "Avec quel Bac peut-on accéder au DUT INFO ?",
+      "answers": ["Bac S", "Bac STI2D", "N'importe quelle BAC général", "N'importe quelle BAC Technologique", "Aucun BAC précis"],
+      "correction": [4],
+      "multipleChoices": true
+    },
+    {
+      "title": "Dans quel optique sont formé les étudiants en DUT INFO ?",
+      "answers": ["Techniciens polyvalents", "Technicien spécialisé"],
+      "correction": [0],
+      "multipleChoices": false
+    },
+    {
+      "title": "Dans quel optique sont formé les étudiants en DUT INFO ?",
+      "answers": ["Techniciens polyvalents", "Technicien spécialisé"],
+      "correction": [0],
+      "multipleChoices": false
+    },
+    {
+      "title": "Le DUT INFO compte-t-il des options différentes ?",
+      "answers": ["Oui", "Non"],
+      "correction": [1],
+      "multipleChoices": false,
+      "note": "Juste qu'en 2005 le DUT INFO comptais 3 options : Systèmes Industriels / GénieInformatique / Imagerie Numérique qui ont été supprimer en 2005."
+    },
+    {
+      "title": "A quoi correspond la matière « systèmes informatique » ?",
+      "answers": ["Enseignement sur les différents OS", "Enseignement sur les logiciels en général", "Enseignement sur tous les systèmes physique et virtuel lié à l’informatique"],
+      "correction": [2],
+      "multipleChoices": false
+    },
+    {
+      "title": "A quoi correspond la matière « Algorithmique et Programmation » ?",
+      "answers": ["Enseignement sur différent langages de programmation", "Enseignement sur ledéveloppement logiciels", "Enseignement sur l’Algorithmique / Logique /Programmation"],
+      "correction": [2],
+      "multipleChoices": false
     }
   ]
 }

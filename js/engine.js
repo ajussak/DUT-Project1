@@ -28,7 +28,7 @@ class Game {
 
         let button = $('#ok-button');
 
-        if (gameContent.children('blockquote').length > 0) {
+        if (button.text() === 'Suivant') {
             button.text('Valider');
             this.nextQuestion();
         }
@@ -58,7 +58,8 @@ class Game {
             if (point === this.currentQuestionData['correction'].length)
                 this.finalPoint++;
 
-            gameContent.append('<h6>Note : </h6><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
+            if(this.currentQuestionData.hasOwnProperty('note'))
+                gameContent.append('<h6>Note : </h6><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
             button.text('Suivant');
         }
     }
@@ -103,7 +104,7 @@ class Game {
                 form.append('<p><label><input type="checkbox" class="filled-in"><span>' + ans + '</span></label></p>')
             };
 
-            this.getAnswers().forEach(this.getCorrection().length > 1 ? addCheckbox : addRadio);
+            this.getAnswers().forEach(this.currentQuestionData['multipleChoices'] ? addCheckbox : addRadio);
 
             let questionContent = $('<div class="row"></div>');
             questionContent.append(form);
