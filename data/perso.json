@@ -2,16 +2,48 @@
   "title": "Test de personnalité",
   "questions":[
     {
-      "title": "Les pâtes se magent-elles ?",
-      "category": "Swag"
+      "title": "Pensez-vous avoir des connaissances en informatique qui peuvent vous servir durant vos études ?",
+      "category": "Connaissances en Informatique"
+    },
+	{
+      "title": "Avez-vous des connaissances concernant les ordinateurs ?",
+      "category": "Connaissances en Informatique"
     },
     {
-      "title": "Repondez 2 et 3",
-      "category": "Swag"
+      "title": "Vous considérez-vous comme étant un Hardworker ?",
+      "category": "Motivation"
     },
     {
-      "title": "BIte",
-      "category": "Yolo"
+      "title": "Pensez-vous avoir la motivation pour ce type d'étude ?",
+      "category": "Motivation"
+    },
+	{
+      "title": "Appréciez-vous le fait de devoir travailler par groupe ?", 
+      "category": "Travail d'équipe"
+    },
+	{
+      "title": "Pensez-vous qu'un cadre strict vous permettrez de vous sentir mieux pour vos études ?",
+      "category": "Encadrement"
+    },
+	{
+      "title": "Souhaitez-vous vous orienter dans un métier touchant plus l'infographie ?",
+      "category": "Type de métier souhaité à l'avenir"
+    },
+	{
+      "title": "Souhaitez-vous vous orienter dans un métier touchant plus la programmation ?",
+      "category": "Type de métier souhaité à l'avenir"
+    },
+	{
+      "title": "Considérez-vous être un passionné de l'informatique ?",
+      "category": "Mots-clés pour vous décrire"
+    },
+	{
+      "title": "Considérez-vous être un passionné de jeux vidéos ?",
+      "category": "Mots-clés pour vous décrire"
+    },
+	{
+      "title": "Considérez-vous être un passionné du hardware (sans être trop intéressé dans le software) ?",
+      "category": "Mots-clés pour vous décrire"
     }
   ]
 }

@@ -1,17 +1,129 @@
 {
   "title": "Questionnaire",
-  "questions":[
+  "questions": [
     {
-      "title": "Les pâtes se magent-elles ?",
-      "answers": ["Oui", "Non"],
-      "correction": [0],
-      "note": "Oui, c'est délicieux."
+      "title": "Avec quel Bac peut-on accéder au DUT Informatique ?",
+      "answers": [
+        "Bac S",
+        "Bac STI",
+        "Bac L",
+        "Aucun Bac précis"
+      ],
+      "correction": [
+        3
+      ],
+      "note": "En effet le DUT Informatique ne demande aucun bac précis pour intégrer ce DUT."
     },
     {
-      "title": "Repondez 2 et 3",
-      "answers": ["1", "2", "3", "4"],
-      "correction": [1, 2],
-      "note": "C'est simple, non ?"
+      "title": "Il y a-t-il des prérequis à avoir en informatique ?",
+      "answers": [
+        "Oui",
+        "Non"
+      ],
+      "correction": [
+        1
+      ],
+      "note": "En effet le DUT Informatique ne demande aucun pré-requis en informatique car tous les bacs peuvent accéder à ce DUT."
+    },
+    {
+      "title": "L’inscription au DUT Informatique est-elle payante ?",
+      "answers": [
+        "Oui",
+        "Non"
+      ],
+      "correction": [
+        0,
+        1
+      ],
+      "note": "En effet pour les étudiants possédant la bourse, l'inscription est gratuite, sinon les frais d'inscription s'élèvent à 90€."
+    },
+    {
+      "title": "À quoi correspond la matière « système informatique » ?",
+      "answers": [
+        "Enseignement sur les différents OS (système d'exploitation)",
+        "Enseignement sur les logiciels en général",
+        "Enseignement sur tous les systèmes physiques et virtuels lié à l’informatique"
+      ],
+      "correction": [
+        2
+      ],
+      "note": "En effet la matière « Système informatique » va nous enseigner les différents systèmes physiques et logiciels afin de comprendre leur fonctionnement et leur conception."
+    },
+    {
+      "title": "À quoi correspond la matière « Algorithmique et Programmation » ?",
+      "answers": [
+        "Enseignement sur différent langages de programmation",
+        "Enseignement sur le développement logiciel",
+        "Enseignement sur l’Algorithmique / Logique / Programmation"
+      ],
+      "correction": [
+        2
+      ],
+      "note": "En effet la matière « Algorithmique et Programmation » va nous enseigner le raisonnement, la logique, la systématisation de la création d’algorithme et enfin la programmation."
+    },
+    {
+      "title": "À quoi correspond la matière « Base de Données » ?",
+      "answers": [
+        "Enseignement sur la gestion des données",
+        "Enseignement sur la création et la gestion des données"
+      ],
+      "correction": [
+        1
+      ],
+      "note": "En effet la matière « Base de Données » va nous enseigner la création et la gestion de données sous forme de base de données."
+    },
+    {
+      "title": "A quoi correspond la matière « Conception de documents et d’interfaces numériques » ?",
+      "answers": [
+        "Enseignement sur la création et mise en forme de logiciel",
+        "Enseignement sur l’acquisition de compétence sur le domaine des suites bureautiques"
+      ],
+      "correction": [
+        1
+      ],
+      "note": "En effet la matière « Conception de documents et d’interfaces numériques » va nous enseigner la maîtrise des outils bureautiques mais aussi la création d’interface."
+    },
+    {
+      "title": "Le DUT Informatique comporte-t-il un stage ? Si oui, quel est sa durée ?",
+      "answers": [
+        "Oui",
+        "Non",
+        "1 mois",
+        "2 mois",
+        "4 semaines",
+        "8 semaines",
+        "12 semaines"
+      ],
+      "correction": [
+        0,
+        6
+      ],
+      "note": "Le stage s’effectuera pendant une durée de 12 semaines (stage rémunéré) dans une entreprise de votre choix."
+    },
+    {
+      "title": "Le DUT informatique a-t-il une valeur dans les autres pays ?",
+      "answers": [
+        "Oui",
+        "Non"
+      ],
+      "correction": [
+        0
+      ],
+      "note": "En effet le diplôme de DUT informatique a une valeur dans les autres pays utilisant le système de crédits ECTS pour classer chaque diplôme, le DUT correspond à 120 crédits ce qui en France correspond à Bac +2."
+    },
+    {
+      "title": "Cochez les suites d’études qui vous semblent faire suite au DUT informatique.",
+      "answers": [
+        "1 : Parcours Infrastructures, Stockage et Analyse de données Massives - Big Data (ISAM) - Site de Dijon",
+        "2 : Licence Professionnelle mention Métiers du Numérique : conception, rédaction et réalisation web (MN), Parcours Design et Développement pour l'Internet Mobile (DDIM) - Site de Dijon",
+        "3 : Licence Professionnelle mention Métiers du Numérique : conception, rédaction et réalisation web (MN), Parcours Commercialisation des Produits en Ligne (CPL) - Site de Dijon"
+      ],
+      "correction": [
+        0,
+        1,
+        2
+      ],
+      "note": "En effet avec un DUT informatique toute ces poursuites sont possibles."
     }
   ]
 }

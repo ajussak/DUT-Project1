@@ -11,7 +11,7 @@ class Game {
         content.empty();
         content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
         content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1></div>');
-        content.append('<div class="row"><div class="col s12 l6 offset-l3" id="game-content"></div></div>');
+        content.append('<div class="row"><div class="col s12" id="game-content"></div></div>');
         content.append('<div class="row" id="button-row"><p class="center-align"><a id="ok-button" class="waves-effect waves-light btn center">Valider</a></p></div>');
 
         let game = this;
@@ -120,7 +120,7 @@ class PersonnalityGame extends Game {
     }
 
     getAnswers() {
-        return ['D\'accord', 'Plutôt', 'Neutre', 'Plutôt pas d\'accord', 'Pas d\'accord'];
+        return ['D\'accord', 'Plutôt d\'accord', 'Neutre', 'Plutôt pas d\'accord', 'Pas d\'accord'];
     }
 
     buttonClicked() {
