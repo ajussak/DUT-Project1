@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $.ajaxSetup({ cache: false });
+});
+
+$(document).ready(function(){
+    $('.parallax').parallax();
+});
+
 let currentGame;
 
 $('#start-quizz').click(function (event) {

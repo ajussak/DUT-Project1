@@ -6,13 +6,13 @@ class Game {
     }
 
     start() {
-        console.log('SSS');
         let content = $('#content');
         content.empty();
-        content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
-        content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1></div>');
-        content.append('<div class="row"><div class="col s12" id="game-content"></div></div>');
+        //content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
+        content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1><h2 id="question-title" class="center"></h2></div>');
+        content.append('<div class="row"><div class="col m10 offset-m1 l6 offset-l3" id="game-content"></div></div>');
         content.append('<div class="row" id="button-row"><p class="center-align"><a id="ok-button" class="waves-effect waves-light btn center">Valider</a></p></div>');
+        content.append('<div class="row"><a id="back-home" class="center" href="index.html">Retourner à l\'accueil</a></div>');
 
         let game = this;
 
@@ -23,7 +23,6 @@ class Game {
     }
 
     buttonClicked() {
-
         let gameContent = $('#game-content');
 
         let button = $('#ok-button');
@@ -59,9 +58,10 @@ class Game {
                 this.finalPoint++;
 
             if(this.currentQuestionData.hasOwnProperty('note'))
-                gameContent.append('<h6>Note : </h6><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
+                gameContent.append('<a class="note">Note : </a><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
             button.text('Suivant');
         }
+        $('html, body').scrollTop($(document).height());
     }
 
     getAnswers() {
@@ -74,11 +74,8 @@ class Game {
 
     displayResult() {
         $('#button-row').remove();
-
-        let gameContent = $('#game-content');
-        gameContent.empty();
-
-        gameContent.append('<div class="row"><h3 class="center">Votre note final : ' + Math.round(this.finalPoint / this.data['questions'].length * 100) + '%</h3></div>');
+        $('#question-title').text('Votre note final : ' + Math.round(this.finalPoint / this.data['questions'].length * 100) + '%');
+        $('#game-content').remove();
     }
 
     nextQuestion() {
@@ -92,7 +89,8 @@ class Game {
 
             let gameContent = $('#game-content');
             gameContent.empty();
-            gameContent.append('<h4>' + this.currentQuestionData['title'] + '</h4>');
+
+            $('#question-title').text(this.currentQuestionData['title']);
 
             let form = $('<form action="#"></form>');
 
@@ -104,7 +102,7 @@ class Game {
                 form.append('<p><label><input type="checkbox" class="filled-in"><span>' + ans + '</span></label></p>')
             };
 
-            this.getAnswers().forEach(this.currentQuestionData['multipleChoices'] ? addCheckbox : addRadio);
+            this.getAnswers().forEach(this.getCorrection().length > 1 ? addCheckbox : addRadio);
 
             let questionContent = $('<div class="row"></div>');
             questionContent.append(form);
@@ -149,19 +147,33 @@ class PersonnalityGame extends Game {
 
     displayResult() {
         $('#button-row').remove();
+        $('#question-title').text('');
 
         let gameContent = $('#game-content');
         gameContent.empty();
 
-        let newDiv = $('<div class="row"></div>');
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
+        let add = 0;
         for (let property in this.userEntry) {
-            const reducer = (accumulator, currentValue) => accumulator + currentValue;
             let categoryStats = this.userEntry[property];
-
-            newDiv.append('<div class="col l3"><h3 class="center">' + property + '</h3><h4 class="center">' + Math.round(categoryStats.reduce(reducer) / categoryStats.length * 100)  + '%</h4></div>');
+            add += categoryStats.reduce(reducer) / categoryStats.length;
         }
 
+        let result = $('<div class="row"></div>');
+
+        result.append(Math.round(add / Object.keys(this.userEntry).length * 100));
+
+        let newDiv = $('<div class="row"></div>');
+
+        let i = 1;
+
+        for (let property in this.userEntry) {
+            let categoryStats = this.userEntry[property];
+            newDiv.append('<a class="category-name">' + property + '</a><div class="progress"><div class="determinate" style="width: ' + Math.round(categoryStats.reduce(reducer) / categoryStats.length * 100) +'%"></div></div><br />')
+        }
+
+        gameContent.append(result);
         gameContent.append(newDiv);
 
     }
