@@ -125,5 +125,13 @@
       ],
       "note": "En effet avec un DUT informatique toute ces poursuites sont possibles."
     }
-  ]
+  ],
+  "notesComments" :
+  {
+    "100": "Tu as compris tous les enjeux du DUT, va et épanouie toi.",
+    "75": "Tu commences à comprendre les enjeux le DUT, tu es vraiment motivé à l'intégrer.",
+    "50": "Tu as les connaissances de base sur le DUT, tu as l'air assez intéressé.",
+    "25": "Tu as quelques connaissances sur le DUT",
+    "0": "Tu n’as aucune connaissance sur ce qu'est le DUT informatique, je te conseille de bien relire chaque information complémentaire."
+  }
 }

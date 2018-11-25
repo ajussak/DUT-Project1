@@ -10,7 +10,7 @@ class Game {
         content.empty();
         //content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
         content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1><h2 id="question-title" class="center"></h2></div>');
-        content.append('<div class="row"><div class="col m10 offset-m1 l6 offset-l3" id="game-content"></div></div>');
+        content.append('<div class="row"><div class="col s10 offset-s1 l6 offset-l3" id="game-content"></div></div>');
         content.append('<div class="row" id="button-row"><p class="center-align"><a id="ok-button" class="waves-effect waves-light btn center">Valider</a></p></div>');
         content.append('<div class="row"><a id="back-home" class="center" href="index.html">Retourner à l\'accueil</a></div>');
 
@@ -36,32 +36,36 @@ class Game {
             let correction = this.currentQuestionData['correction'];
             let point = 0;
 
-            $('label').each(function (index) {
+            let label = $('label');
 
-                $(this)[0].childNodes[0].disabled = true;
-
+            label.each(function (index) {
                 if ($(this)[0].childNodes[0].checked) {
                     userAnswers.push(index);
-                    if (!correction.includes(index)) {
-                        $($(this)[0].childNodes[1]).css('text-decoration', 'line-through').css('color', 'red');
-                        point--;
-                    }
-                    else
-                        point++;
                 }
-
-                if (correction.includes(index))
-                    $($(this)[0].childNodes[1]).css('color', 'green').css('font-weight', 'bold');
             });
 
-            if (point === this.currentQuestionData['correction'].length)
-                this.finalPoint++;
+            if(userAnswers.length > 0) {
+                label.each(function (index) {
+                    $(this)[0].childNodes[0].disabled = true;
+                    if (!correction.includes(index) && userAnswers.includes(index)) {
+                        $('span').eq(index).css('text-decoration', 'line-through').css('color', 'red');
+                        point--;
+                    }
+                    else if(correction.includes(index)) {
+                        $('span').eq(index).css('color', 'green').css('font-weight', 'bold');
+                        point++;
+                    }
+                });
 
-            if(this.currentQuestionData.hasOwnProperty('note'))
-                gameContent.append('<a class="note">Note : </a><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
-            button.text('Suivant');
+                if (point === this.currentQuestionData['correction'].length)
+                    this.finalPoint++;
+
+                if (this.currentQuestionData.hasOwnProperty('note'))
+                    gameContent.append('<a class="note">Note : </a><blockquote>' + this.currentQuestionData['note'] + '</blockquote>');
+                button.text('Suivant');
+            }
         }
-        $('html, body').scrollTop($(document).height());
+        $('#question-title').scrollTop();
     }
 
     getAnswers() {
@@ -74,7 +78,14 @@ class Game {
 
     displayResult() {
         $('#button-row').remove();
-        $('#question-title').text('Votre note final : ' + Math.round(this.finalPoint / this.data['questions'].length * 100) + '%');
+
+        let percent =  Math.round(this.finalPoint / this.data['questions'].length * 100);
+
+        $('#question-title').text('Votre note final : ' + percent + '%');
+        let content = $('#back-home');
+
+        content.before('<div class="row"><p class="center">Vous avez répondu juste à ' + this.finalPoint + ' questions sur ' + this.data['questions'].length + '.<br/>' + this.getCommentFromPercent(percent) + '</p></div>')
+
         $('#game-content').remove();
     }
 
@@ -92,7 +103,7 @@ class Game {
 
             $('#question-title').text(this.currentQuestionData['title']);
 
-            let form = $('<form action="#"></form>');
+            let form = $('<form id="answers" action="#"></form>');
 
             let addRadio = function (ans) {
                 form.append('<p><label><input name="radioAnswer" type="radio" class="with-gap"><span>' + ans + '</span></label></p>');
@@ -109,6 +120,22 @@ class Game {
             gameContent.append(questionContent);
         }
     }
+
+    getCommentFromPercent(percent)
+    {
+        let min = 0;
+
+        for(let key in this.data['notesComments'])
+        {
+            if(percent === key)
+                return this.data['notesComments'][key];
+            else if(percent >= key)
+                min = key;
+        }
+
+        return this.data['notesComments'][min];
+    }
+
 }
 
 class PersonnalityGame extends Game {
@@ -147,7 +174,6 @@ class PersonnalityGame extends Game {
 
     displayResult() {
         $('#button-row').remove();
-        $('#question-title').text('');
 
         let gameContent = $('#game-content');
         gameContent.empty();
@@ -162,20 +188,30 @@ class PersonnalityGame extends Game {
 
         let result = $('<div class="row"></div>');
 
-        result.append(Math.round(add / Object.keys(this.userEntry).length * 100));
+        let percent = Math.round(add / Object.keys(this.userEntry).length * 100);
+
+        $('#question-title').text('Vous correspondez à ' + percent + ' % à la formation');
+
+
 
         let newDiv = $('<div class="row"></div>');
+
+        newDiv.append('<p class="center">' + this.getCommentFromPercent(percent) + '</p>');
+
+        newDiv.append('<h3 class="center">Vos statistiques détaillées</h3>')
 
         let i = 1;
 
         for (let property in this.userEntry) {
             let categoryStats = this.userEntry[property];
-            newDiv.append('<a class="category-name">' + property + '</a><div class="progress"><div class="determinate" style="width: ' + Math.round(categoryStats.reduce(reducer) / categoryStats.length * 100) +'%"></div></div><br />')
+
+            let pc = Math.round(categoryStats.reduce(reducer) / categoryStats.length * 100);
+
+            newDiv.append('<a class="category-name">' + property + ' (' + pc + ' %)</a><div class="progress"><div class="determinate" style="width: ' + pc +'%"></div></div><br />')
         }
 
         gameContent.append(result);
         gameContent.append(newDiv);
-
     }
 
     getCorrection() {

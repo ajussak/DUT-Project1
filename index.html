@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
-          media="screen,projection"/>
+          media="screen"/>
 
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+
+    <title>IUT Dijon-Auxerre - DUT Informatique - Êtes-vous fait pour cette formation ?</title>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,10 +20,10 @@
 <body>
 
 <div class="parallax-container">
-    <div class="parallax"><img src="img/iut-fog.jpg"></div>
+    <div class="parallax"><img src="img/iut-fog.jpg" alt="Bâtiment principal d'IUT de Dijon"></div>
     <br><br>
     <p class="center">
-        <img src="img/logo.png" alt="Logo de l'iut"><br/><br/>
+        <img id="logo" src="img/logo.png" alt="Logo de l'iut"><br/><br/>
         <a id="title">DUT Informatique</a><br/>
         <a id="subtitle">Êtes-vous fait pour cette formation ?</a>
     </p>
@@ -32,18 +34,9 @@
         <div class="col offset-l2 l4">
             <div class="row"><h4 class="center">Questionnaire</h4></div>
             <div class="row">
-                <div class="col s10 offset-s1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    fringilla ultricies
-                    lacus. Suspendisse potenti. Donec ac quam vitae erat pellentesque elementum. Sed ac purus urna.
-                    Vivamus
-                    ut vestibulum diam. Aliquam at nisi sed turpis tristique sollicitudin in a diam. Nunc id turpis eget
-                    risus consectetur suscipit in non mi. Nunc maximus augue vel bibendum cursus. Nam ultricies diam
-                    quis
-                    faucibus luctus. Vivamus lacinia sagittis leo, a tincidunt ipsum. Cras vel condimentum nunc. Sed
-                    interdum dui vel orci commodo iaculis. Quisque ac enim varius, fermentum tortor quis, auctor sem.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras
-                    eleifend
-                    lectus sed augue porta vulputate.</p></div>
+                <div class="col s10 offset-s1"><p>Le quizz est informatif va te permettre d'éclairer toutes les
+                    questions que tu pourrais te poser concernant le DUT info de Dijon.<br/>
+                    Ce quizz traitera tous les sujets-clé concernant le DUT.</p></div>
             </div>
             <div class="row"><a class="col btn waves-effect waves-light s6 offset-s3" id="start-quizz">Lancer</a></div>
         </div>
@@ -51,20 +44,9 @@
             <div class="row"><h4 class="center">Test de personnalité</h4></div>
             <div class="row">
                 <div class="col s10 offset-s1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla
-                        ultricies
-                        lacus. Suspendisse potenti. Donec ac quam vitae erat pellentesque elementum. Sed ac purus urna.
-                        Vivamus
-                        ut vestibulum diam. Aliquam at nisi sed turpis tristique sollicitudin in a diam. Nunc id turpis
-                        eget
-                        risus consectetur suscipit in non mi. Nunc maximus augue vel bibendum cursus. Nam ultricies diam
-                        quis
-                        faucibus luctus. Vivamus lacinia sagittis leo, a tincidunt ipsum. Cras vel condimentum nunc. Sed
-                        interdum dui vel orci commodo iaculis. Quisque ac enim varius, fermentum tortor quis, auctor
-                        sem.
-                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras
-                        eleifend
-                        lectus sed augue porta vulputate.</p>
+                    <p>Le quizz de personnalité va te permettre de voir si tu pourrais correspondre au DUT informatique,
+                        au travers de question techniques, de compétence. <br/>
+                        Ce quizz sera t'aiguiller vers le meilleur choix.</p>
                 </div>
             </div>
             <div class="row"><a class="col btn waves-effect waves-light s6 offset-s3" id="start-perso">Lancer</a></div>
@@ -73,10 +55,9 @@
 </div>
 
 <!--JavaScript at end of body for optimized loading-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-<script type="text/javascript" src="js/engine.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

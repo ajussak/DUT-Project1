@@ -2,48 +2,52 @@
   "title": "Test de personnalité",
   "questions":[
     {
-      "title": "Pensez-vous avoir des connaissances en informatique qui peuvent vous servir durant vos études ?",
-      "category": "Connaissances en Informatique"
-    },
-	{
-      "title": "Avez-vous des connaissances concernant les ordinateurs ?",
+      "title": "Vous pensez avoir des connaissances en informatique qui peuvent vous servir durant vos études.",
       "category": "Connaissances en Informatique"
     },
     {
-      "title": "Vous considérez-vous comme étant un Hardworker ?",
+      "title": "Vous avez des connaissances concernant les ordinateurs.",
+      "category": "Connaissances en Informatique"
+    },
+    {
+      "title": "Vous vous considérez comme étant un Hardworker.",
       "category": "Motivation"
     },
     {
-      "title": "Pensez-vous avoir la motivation pour ce type d'étude ?",
+      "title": "Vous pensez avoir la motivation pour ce type d'étude.",
       "category": "Motivation"
     },
-	{
-      "title": "Appréciez-vous le fait de devoir travailler par groupe ?", 
+    {
+      "title": "Vous appréciez le fait de devoir travailler par groupe.",
       "category": "Travail d'équipe"
     },
-	{
-      "title": "Pensez-vous qu'un cadre strict vous permettrez de vous sentir mieux pour vos études ?",
+    {
+      "title": "Vous êtes plus à l'aise dans vos études avec un cadre strict.",
       "category": "Encadrement"
     },
-	{
-      "title": "Souhaitez-vous vous orienter dans un métier touchant plus l'infographie ?",
+    {
+      "title": "Vous souhaitez vous orienter dans un métier touchant plus la programmation.",
       "category": "Type de métier souhaité à l'avenir"
     },
-	{
-      "title": "Souhaitez-vous vous orienter dans un métier touchant plus la programmation ?",
-      "category": "Type de métier souhaité à l'avenir"
-    },
-	{
-      "title": "Considérez-vous être un passionné de l'informatique ?",
+    {
+      "title": "Vous êtes un passionné d'informatique.",
       "category": "Mots-clés pour vous décrire"
     },
-	{
-      "title": "Considérez-vous être un passionné de jeux vidéos ?",
+    {
+      "title": "Vous êtes passionné de jeux vidéos.",
       "category": "Mots-clés pour vous décrire"
     },
-	{
-      "title": "Considérez-vous être un passionné du hardware (sans être trop intéressé dans le software) ?",
+    {
+      "title": "Vous vous considérez comme une personne passionnée du hardware (sans être trop intéressé dans le software).",
       "category": "Mots-clés pour vous décrire"
     }
-  ]
+  ],
+  "notesComments" :
+  {
+    "100": "Tu as toutes les compétences pour rentrer dans le DUT Informatique, Bienvenue.",
+    "75": "Tu commences vraiment à correspondre au profil rechercher dans le DUT.",
+    "50": "Tu maîtrises les bases du DUT, tu as beaucoup de chance de pouvoir t'intégrer dans cette poursuite d'étude.",
+    "25": "Tu as certaines compétences pour intégrer le DUT mais il faut persister pour pouvoir y entrer.",
+    "0": "Tu n'est pas fais pour le DUT Informatique, à moins de vraiment y mettre du tiens."
+  }
 }

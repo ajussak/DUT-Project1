@@ -11,6 +11,10 @@
     font-size: 30px;
 }
 
+#content h3 {
+    font-size: 22px;
+}
+
 #content h2 {
     font-size: 25px;
 }
@@ -26,3 +30,11 @@ a {
 #back-home {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 600px) {
+    #logo
+    {
+        width: 300px;
+    }
+}
+
