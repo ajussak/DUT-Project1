@@ -31,10 +31,49 @@ a {
     text-decoration: underline;
 }
 
+.btn {
+    background-color: #077EFF;
+}
+
+.btn:hover {
+    background-color: #075497;
+}
+
 @media screen and (max-width: 600px) {
-    #logo
-    {
+    #logo {
         width: 300px;
     }
 }
 
+#step
+{
+    font-size: 30px;
+    border: 2px solid #26a69a;
+}
+
+blockquote
+{
+    border-left: 5px solid #077EFF;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-bottom: 2px solid #fe7d00;
+    border-right: 2px solid #fe7d00;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid #fe7d00;
+    background-color: #fe7d00;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #fe7d00;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    background-color: #fe7d00;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #fe7d00;
+}
