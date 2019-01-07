@@ -8,8 +8,7 @@ class Game {
     start() {
         let content = $('#content');
         content.empty();
-        //content.append('<div class="row"><p class="center-align"><a class="waves-effect waves-light btn center" onclick="location.reload(true);">Retour</a></p></div>');
-        content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1><h2 id="question-title" class="center"></h2></div>');
+        content.append('<div class="row"><h1 class="center">' + this.data['title'] + '</h1><p id="step" class="center"></p><h2 id="question-title" class="center"></h2></div>');
         content.append('<div class="row"><div class="col s10 offset-s1 l6 offset-l3" id="game-content"></div></div>');
         content.append('<div class="row" id="button-row"><p class="center-align"><a id="ok-button" class="waves-effect waves-light btn center">Valider</a></p></div>');
         content.append('<div class="row"><a id="back-home" class="center" href="index.html">Retourner à l\'accueil</a></div>');
@@ -48,7 +47,6 @@ class Game {
                 label.each(function (index) {
                     $(this)[0].childNodes[0].disabled = true;
                     if (!correction.includes(index) && userAnswers.includes(index)) {
-                        $('span').eq(index).css('text-decoration', 'line-through').css('color', 'red');
                         point--;
                     }
                     else if(correction.includes(index)) {
@@ -84,7 +82,7 @@ class Game {
         $('#question-title').text('Votre note final : ' + percent + '%');
         let content = $('#back-home');
 
-        content.before('<div class="row"><p class="center">Vous avez répondu juste à ' + this.finalPoint + ' questions sur ' + this.data['questions'].length + '.<br/>' + this.getCommentFromPercent(percent) + '</p></div>')
+        content.before('<div class="row"><p class="center">Vous avez répondu juste à ' + this.finalPoint + ' questions sur ' + this.data['questions'].length + '.<br/>' + this.getCommentFromPercent(percent) + '</p></div>');
 
         $('#game-content').remove();
     }
@@ -101,6 +99,7 @@ class Game {
             let gameContent = $('#game-content');
             gameContent.empty();
 
+            $('#step').text(' Question ' + (this.currentQuestion + 1) + '/' + this.data['questions'].length);
             $('#question-title').text(this.currentQuestionData['title']);
 
             let form = $('<form id="answers" action="#"></form>');
@@ -198,9 +197,7 @@ class PersonnalityGame extends Game {
 
         newDiv.append('<p class="center">' + this.getCommentFromPercent(percent) + '</p>');
 
-        newDiv.append('<h3 class="center">Vos statistiques détaillées</h3>')
-
-        let i = 1;
+        newDiv.append('<h3 class="center">Vos statistiques détaillées</h3>');
 
         for (let property in this.userEntry) {
             let categoryStats = this.userEntry[property];
