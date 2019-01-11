@@ -18,7 +18,7 @@
       "category": "Motivation"
     },
     {
-      "title": "Vous appréciez le fait de devoir travailler par groupe.",
+      "title": "Vous appréciez le fait de devoir travailler en groupe.",
       "category": "Travail d'équipe"
     },
     {
@@ -44,10 +44,10 @@
   ],
   "notesComments" :
   {
-    "100": "Tu as toutes les compétences pour rentrer dans le DUT Informatique, Bienvenue.",
-    "75": "Tu commences vraiment à correspondre au profil rechercher dans le DUT.",
-    "50": "Tu maîtrises les bases du DUT, tu as beaucoup de chance de pouvoir t'intégrer dans cette poursuite d'étude.",
-    "25": "Tu as certaines compétences pour intégrer le DUT mais il faut persister pour pouvoir y entrer.",
-    "0": "Tu n'est pas fais pour le DUT Informatique, à moins de vraiment y mettre du tiens."
+    "100": "Vous correspondez beaucoup au DUT Informatique.",
+    "75": "Vous correspondez plutôt au DUT Informatique.",
+    "50": "Vous commencez à correspondre au DUT Informatique",
+    "25": "Vous pouvez correspondre au DUT Informatique.",
+    "0": "Le DUT Informatique n'est peut-être pas ce que vous cherchez."
   }
 }

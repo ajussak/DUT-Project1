@@ -15,7 +15,7 @@
       "note": "En effet le DUT Informatique ne demande aucun bac précis pour intégrer ce DUT."
     },
     {
-      "title": "Il y a-t-il des prérequis à avoir en informatique ?",
+      "title": "Il y a-t-il des pré-requis à avoir en informatique ?",
       "answers": [
         "Oui",
         "Non"
@@ -35,7 +35,7 @@
         0,
         1
       ],
-      "note": "En effet pour les étudiants possédant la bourse, l'inscription est gratuite, sinon les frais d'inscription s'élèvent à 90€."
+      "note": "En effet pour les étudiants possédant la bourse, l'inscription est gratuite. Pour les étudiants non boursiers, les frais d'inscription s'élèvent à 90€."
     },
     {
       "title": "À quoi correspond la matière « système informatique » ?",
@@ -47,7 +47,7 @@
       "correction": [
         2
       ],
-      "note": "En effet la matière « Système informatique » va nous enseigner les différents systèmes physiques et logiciels afin de comprendre leur fonctionnement et leur conception."
+      "note": "En effet la matière « Système informatique » étudie les différents systèmes physiques et logiciels afin de comprendre leur fonctionnement et leur conception."
     },
     {
       "title": "À quoi correspond la matière « Algorithmique et Programmation » ?",
@@ -59,7 +59,7 @@
       "correction": [
         2
       ],
-      "note": "En effet la matière « Algorithmique et Programmation » va nous enseigner le raisonnement, la logique, la systématisation de la création d’algorithme et enfin la programmation."
+      "note": "En effet la matière « Algorithmique et Programmation » enseigne le raisonnement, la logique, la création d’algorithme et enfin la programmation."
     },
     {
       "title": "À quoi correspond la matière « Base de Données » ?",
@@ -70,7 +70,7 @@
       "correction": [
         1
       ],
-      "note": "En effet la matière « Base de Données » va nous enseigner la création et la gestion de données sous forme de base de données."
+      "note": "En effet la matière « Base de Données » enseigne la création et la gestion de données sous forme de base de données."
     },
     {
       "title": "A quoi correspond la matière « Conception de documents et d’interfaces numériques » ?",
@@ -81,10 +81,10 @@
       "correction": [
         1
       ],
-      "note": "En effet la matière « Conception de documents et d’interfaces numériques » va nous enseigner la maîtrise des outils bureautiques mais aussi la création d’interface."
+      "note": "En effet la matière « Conception de documents et d’interfaces numériques » enseigne la maîtrise des outils bureautiques mais aussi la création d’interface."
     },
     {
-      "title": "Le DUT Informatique comporte-t-il un stage ? Si oui, quel est sa durée ?",
+      "title": "Le DUT Informatique comporte-t-il un stage ? Si oui, quel en est sa durée ?",
       "answers": [
         "Oui",
         "Non",
@@ -123,15 +123,15 @@
         1,
         2
       ],
-      "note": "En effet avec un DUT informatique toute ces poursuites sont possibles."
+      "note": "En effet avec un DUT informatique, toute ces poursuites sont possibles."
     }
   ],
   "notesComments" :
   {
-    "100": "Tu as compris tous les enjeux du DUT, va et épanouie toi.",
-    "75": "Tu commences à comprendre les enjeux le DUT, tu es vraiment motivé à l'intégrer.",
-    "50": "Tu as les connaissances de base sur le DUT, tu as l'air assez intéressé.",
-    "25": "Tu as quelques connaissances sur le DUT",
-    "0": "Tu n’as aucune connaissance sur ce qu'est le DUT informatique, je te conseille de bien relire chaque information complémentaire."
+    "100": "Vous êtes très bien renseigné sur le contenu du DUT Informatique, Bravo.",
+    "75": "Vous commencez à comprendre les enjeux le DUT, vous êtes motivé à l'intégrer.",
+    "50": "Vous avez les connaissances de base sur le DUT, vous avez l'air assez intéressé.",
+    "25": "Vous avez quelques connaissances sur le DUT",
+    "0": "Vous avez des renseignements limités sur le contenu DUT informatique, Nous vous conseillons de bien relire chaque information complémentaire."
   }
 }

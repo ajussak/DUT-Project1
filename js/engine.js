@@ -77,6 +77,8 @@ class Game {
     displayResult() {
         $('#button-row').remove();
 
+        $('#step').text('');
+
         let percent =  Math.round(this.finalPoint / this.data['questions'].length * 100);
 
         $('#question-title').text('Votre note final : ' + percent + '%');
@@ -173,6 +175,8 @@ class PersonnalityGame extends Game {
 
     displayResult() {
         $('#button-row').remove();
+
+        $('#step').text('');
 
         let gameContent = $('#game-content');
         gameContent.empty();
